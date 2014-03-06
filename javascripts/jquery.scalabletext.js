@@ -1,8 +1,8 @@
 /*
-* Scalable Text v1.0 - A responsive text jQuery plugin
+* Scalable Text v1.1 - A responsive text jQuery plugin
 * Copyright 2014, Tom Doan http://www.tohodo.com/
 *
-* Responsive Text by Tom Doan (http://www.tohodo.com/)
+* Scalable Text by Tom Doan (http://www.tohodo.com/)
 * is licensed under the MIT License. Read a copy of the
 * license in the LICENSE.txt file or at
 * http://choosealicense.com/licenses/mit
@@ -16,6 +16,10 @@
         reference: null  /* Font size will be set relative to this element */
       }, oOptions),
       $ref = $(oSettings.reference),
+      /* Pad ratio for mobile to ensure width is smaller than reference element */
+      nPxRatio = (window.devicePixelRatio && window.devicePixelRatio > 1) ? window.devicePixelRatio * 1.05 : 1,
+      /* Orientation ratio to take into account landscape mode on mobile */
+      nORatio = (!window.orientation || window.orientation === 0) ? 1 : 1.8,
       setFontSize = function(o, e) {
         var $o = $(o),
           /* Text font size */
@@ -26,7 +30,7 @@
           nRatio = (e) ? parseFloat(o.getAttribute('data-fontratio')) : (nFontSize / screen.width) * ($(window).width() / nRefWidth);
         // Set data-fontratio attribute only on first load
         if (!e) o.setAttribute('data-fontratio', nRatio);
-        if (nRatio) $o.css('font-size', (nRefWidth * nRatio) + 'px');
+        if (nRatio) $o.css('font-size', (((nRefWidth / nPxRatio) * (nRatio / nPxRatio)) * nORatio) + 'px');
       };
     return this.each(function() {
       // This scope required for resize handler
