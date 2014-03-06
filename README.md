@@ -10,6 +10,7 @@ Options
 Property    | Description
 ----------- | -------------
 `reference` | Selector to the reference element (text will scale relative to this element's width). If this option is not provided, then the default reference element will be the parent element.
+`styles`    | Array of additional styles to scale in addition to font-size.
 
 
 Usage
@@ -17,18 +18,25 @@ Usage
 
 ```html
 <body>
-<h1>Responsive Heading</h1>
+<h1>Scalable Heading</h1>
+<div>
+  <strong>Scalable Text</strong>
+<div>
 <p>
-  <button>Responsive Button Label</button>
+  <button>Scalable Button</button>
 </p>
 ...
 <script>
 $(document).ready(function() {
   // Default options
   $('h1').scaleText();
-  // Scale relative to <body> instead of <p>
+  // Scale relative to <h1> instead of <div>
+  $('strong').scaleText({
+    reference: 'h1'
+  });
+  // You can scale an entire button by doing this:
   $('button').scaleText({
-    reference: 'body'
+    styles: ['border-radius', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left']
   });
 }
 </script>
