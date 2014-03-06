@@ -8,6 +8,11 @@
 <title>Scalable Text Demo</title>
 <style type="text/css">
 h1 { font-size:900%; }
+button {
+border-radius:10px;
+font-size:200%;
+padding:.5em;
+}
 .bar-red {
 width:60%;
 background:#f00;
@@ -35,14 +40,21 @@ float:right;
 
 <p id="text" class="scaled">This text scales with the red bar above.</p>
 
+<p>
+  <button class="scaled">A Scalable Button!</button>
+</p>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="javascripts/jquery.scalabletext.js"></script>
 <script>
-jQuery(document).ready(function() {
+$(document).ready(function() {
   // Make text responsive!
-  jQuery('h1').scaleText().show();
-  jQuery('#text').scaleText({
+  $('h1').scaleText().show();
+  $('#text').scaleText({
     reference: '.bar-red'
+  }).show();
+  $('button').scaleText({
+    styles: ['border-radius', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left']
   }).show();
 });
 
