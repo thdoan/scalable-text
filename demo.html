@@ -19,7 +19,7 @@ background:#00f;
 color:#fff;
 float:right;
 }
-.scaled { visibility:hidden;  /* Hide initially to prevent FOUC */ }
+.scaled { display:none;  /* Hide initially to prevent FOUC */ }
 #text { font-size:250%; }
 </style>
 </head>
@@ -40,10 +40,10 @@ float:right;
 <script>
 jQuery(document).ready(function() {
   // Make text responsive!
-  jQuery('h1').scaleText().css('visibility', 'visible');
+  jQuery('h1').scaleText().show();
   jQuery('#text').scaleText({
     reference: '.bar-red'
-  }).css('visibility', 'visible');
+  }).show();
 });
 
 // Google Analytics
