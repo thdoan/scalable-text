@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Tom Doan">
+<title>Scalable Text Demo</title>
+<style type="text/css">
+h1 { font-size:900%; }
+.bar-red {
+width:60%;
+background:#f00;
+float:left;
+}
+.bar-blue {
+width:40%;
+background:#00f;
+color:#fff;
+float:right;
+}
+#text { font-size:215%; }
+</style>
+</head>
+<body>
+
+<p>Try resizing this window...</p>
+
+<h1>Responsive Heading</h1>
+
+<div class="bar-red">60%</div>
+<div class="bar-blue">40%</div>
+<br clear="both">
+
+<p id="text">This text remains the same width as the red bar above.</p>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.scalabletext.js"></script>
+<script>
+jQuery(document).ready(function() {
+  // Make text responsive!
+  jQuery('h1').scaleText();
+  jQuery('#text').scaleText({
+    reference: '.bar-red'
+  });
+});
+</script>
+</body>
+</html>
