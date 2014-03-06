@@ -34,3 +34,5 @@ $(document).ready(function() {
 </script>
 </body>
 ```
+
+[__See a demo &raquo;__](http://thdoan.github.io/scalable-text/demo.html)
