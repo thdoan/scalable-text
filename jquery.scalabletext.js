@@ -13,7 +13,8 @@
 (function($) {
   $.fn.scaleText = function(oOptions) {
     var oSettings = $.extend({
-        reference: null  /* Font size will be set relative to this element */
+        reference: null,  /* Font size will be set relative to this element */
+        styles: []  /* Array of styles to scale (useful for buttons) */
       }, oOptions),
       $ref = $(oSettings.reference),
       /* Pad ratio for mobile to ensure width is smaller than reference element */
@@ -31,6 +32,12 @@
         // Set data-fontratio attribute only on first load
         if (!e) o.setAttribute('data-fontratio', nRatio);
         if (nRatio) $o.css('font-size', (((nRefWidth / nPxRatio) * (nRatio / nPxRatio)) * nORatio) + 'px');
+        if (oSettings.styles.length > 0) {
+          var nPadRatio = parseFloat($o.css('font-size')) / nFontSize;
+          for (var i=0, imax=oSettings.styles.length; i<imax; i++) {
+            $o.css(oSettings.styles[i], (parseFloat($o.css(oSettings.styles[i])) * nPadRatio) + 'px');
+          }
+        }
       };
     return this.each(function() {
       // This scope required for resize handler
