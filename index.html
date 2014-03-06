@@ -44,26 +44,39 @@
 <th>Property</th>
 <th>Description</th>
 </tr></thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>reference</code></td>
 <td>Selector to the reference element (text will scale relative to this element's width). If this option is not provided, then the default reference element will be the parent element.</td>
-</tr></tbody>
+</tr>
+<tr>
+<td><code>styles</code></td>
+<td>Array of additional styles to scale in addition to font-size.</td>
+</tr>
+</tbody>
 </table><h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <div class="highlight highlight-html"><pre><span class="nt">&lt;body&gt;</span>
-<span class="nt">&lt;h1&gt;</span>Responsive Heading<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Scalable Heading<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;strong&gt;</span>Scalable Text<span class="nt">&lt;/strong&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;p&gt;</span>
-  <span class="nt">&lt;button&gt;</span>Responsive Button Label<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button&gt;</span>Scalable Button<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/p&gt;</span>
 ...
 <span class="nt">&lt;script&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// Default options</span>
   <span class="nx">$</span><span class="p">(</span><span class="s1">'h1'</span><span class="p">).</span><span class="nx">scaleText</span><span class="p">();</span>
-  <span class="c1">// Scale relative to &lt;body&gt; instead of &lt;p&gt;</span>
+  <span class="c1">// Scale relative to &lt;h1&gt; instead of &lt;div&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'strong'</span><span class="p">).</span><span class="nx">scaleText</span><span class="p">({</span>
+  <span class="nx">reference</span><span class="o">:</span> <span class="s1">'h1'</span>
+  <span class="p">});</span>
+  <span class="c1">// You can scale an entire button by doing this:</span>
   <span class="nx">$</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">scaleText</span><span class="p">({</span>
-    <span class="nx">reference</span><span class="o">:</span> <span class="s1">'body'</span>
+  <span class="nx">styles</span><span class="o">:</span> [<span class="s1">'border-radius'</span>, <span class="s1">'padding-top'</span>, <span class="s1">'padding-right'</span>, <span class="s1">'padding-bottom'</span>, <span class="s1">'padding-left'</span>]
   <span class="p">});</span>
 <span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span>
