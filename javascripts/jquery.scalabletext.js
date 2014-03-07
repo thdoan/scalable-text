@@ -33,10 +33,12 @@
         if (!e) o.setAttribute('data-fontratio', nRatio);
         if (nRatio) $o.css('font-size', (((nRefWidth / nPxRatio) * (nRatio / nPxRatio)) * nORatio) + 'px');
         if (oSettings.styles.length > 0) {
-          var nPadRatio = parseFloat($o.css('font-size')) / nFontSize;
+          var nScale = parseFloat($o.css('font-size')) / nFontSize,
+            oStyles = {};
           for (var i=0, imax=oSettings.styles.length; i<imax; i++) {
-            $o.css(oSettings.styles[i], (parseFloat($o.css(oSettings.styles[i])) * nPadRatio) + 'px');
+            oStyles[oSettings.styles[i]] = (parseFloat($o.css(oSettings.styles[i])) * nScale) + 'px';
           }
+          $o.css(oStyles);
         }
       };
     return this.each(function() {
