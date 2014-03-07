@@ -1,5 +1,5 @@
 /*
-* Scalable Text v1.2 - A responsive text jQuery plugin
+* Scalable Text v1.2.1 - A responsive text jQuery plugin
 * Copyright 2014, Tom Doan http://www.tohodo.com/
 *
 * Scalable Text by Tom Doan (http://www.tohodo.com/)
