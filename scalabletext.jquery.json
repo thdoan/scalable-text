@@ -18,11 +18,11 @@
       "url": "https://github.com/thdoan/scalable-text/blob/master/LICENSE"
     }
   ],
-  "bugs": "https://github.com/thdoan/scalable-text/issues",
-  "homepage": "https://github.com/thdoan/scalable-text",
-  "docs": "https://github.com/thdoan/scalable-text",
-  "download": "http://thdoan.github.io/scalable-text/",
+  "homepage": "http://thdoan.github.io/scalable-text/",
   "demo": "http://thdoan.github.io/scalable-text/demo.html",
+  "docs": "https://github.com/thdoan/scalable-text",
+  "bugs": "https://github.com/thdoan/scalable-text/issues",
+  "download": "https://github.com/thdoan/scalable-text/archive/v1.2.1.zip",
   "dependencies": {
     "jquery": "*"
   }
