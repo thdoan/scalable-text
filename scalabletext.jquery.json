@@ -1,0 +1,29 @@
+{
+  "name": "scalabletext",
+  "title": "jQuery Scalable Text",
+  "description": "A light-weight responsive text jQuery plugin to make your text liquid.",
+  "keywords": [
+    "liquid",
+    "responsive",
+    "scalable"
+  ],
+  "version": "1.2",
+  "author": {
+    "name": "Tom Doan",
+    "url": "http://www.tohodo.com/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/thdoan/scalable-text/blob/master/LICENSE"
+    }
+  ],
+  "bugs": "https://github.com/thdoan/scalable-text/issues",
+  "homepage": "https://github.com/thdoan/scalable-text",
+  "docs": "https://github.com/thdoan/scalable-text",
+  "download": "http://thdoan.github.io/scalable-text/",
+  "demo": "http://thdoan.github.io/scalable-text/demo.html",
+  "dependencies": {
+    "jquery": "*"
+  }
+}
