@@ -3,7 +3,7 @@ Scalable Text
 
 A light-weight responsive text jQuery plugin inspired by [FlowType](http://simplefocus.com/flowtype/). Use it to "liquify" text on your website so that it scales relative to the width of the parent element or, optionally, any element you specify (see Options below).
 
-__NOTE:__ This project has been replaced with [Scalem JS](https://github.com/thdoan/scalem), a better, more reliable and flexible jQuery plugin. This repository is outdated and is kept only as a matter of record.
+__NOTE: This project has been replaced with [Scalem JS](https://github.com/thdoan/scalem), a better, more reliable and flexible jQuery plugin. This repository is outdated and is kept only as a matter of record.__
 
 
 Options
